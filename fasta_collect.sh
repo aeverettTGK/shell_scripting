@@ -11,10 +11,8 @@ collect_fasta_data(){
             if $file == *.fasta; then
                 output=$(python3 fasta_data.py '$file')
                 file_count=$(($file_count + 1))
-                seq_count=$(echo '$output' | awk -F'=' 'seq_count=/ {print
-                $2}')
-                bp_count=$(echo '$output' | awk -F'=' '/bp_count=/ {print
-                $2}')
+                seq_count=$(echo '$output' | awk '{print $1}')
+                bp_count=$(echo '$output' | awk '{print $2}')
                 total_seq=$(($total_seq + $seq_count))
                 total_bp=$(($total_bp + $bp_count))
             fi
