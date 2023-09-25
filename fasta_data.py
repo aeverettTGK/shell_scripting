@@ -26,5 +26,4 @@ if __name__ == "__main__":
     fasta_file.close()
     seq_count = count_seq(lines)
     bp_count = count_bp(lines)
-    print(seq_count)
-    print(bp_count)
+    print(seq_count, bp_count)
